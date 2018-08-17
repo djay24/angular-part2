@@ -1,3 +1,12 @@
-<p>
-  login works!
-</p>
+<div class="marigin-body">
+  <h1 class="text-center">Login</h1>
+  <form class="form-container"  (ngSubmit)="login()">
+    <mat-form-field>
+        <input matInput type="text" placeholder="Email" name="email" [(ngModel)]="authUser.email">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput type="password" placeholder="Password" name="password" [(ngModel)]="authUser.password">
+    </mat-form-field>
+    <button mat-raised-button color="warn">Login</button>
+  </form>
+</div>
