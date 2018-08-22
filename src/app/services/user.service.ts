@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { registerContentQuery } from '@angular/core/src/render3/instructions';
 
 import { User } from '../classes/user'
+import { ApiService } from './api.service'
+import { Router } from '@angular/router'
 
 
 @Injectable({
@@ -9,12 +11,17 @@ import { User } from '../classes/user'
 })
 export class UserService {
 
-  constructor() {}
+  constructor(private api: ApiService, private router: Router) {}
    register(user: User) {
-    console.log(user)
+    return this.api.post('/postUser', user).subscribe((res: any) => {
+      console.log(res);
+      this.router.navigateByUrl('/')
+    });
    };
 
    login(user: any) {
-     console.log(user);
+    return this.api.post('/userLogin', user).subscribe((res: any) => {
+      this.router.navigateByUrl('/')
+    })
    };
 }
