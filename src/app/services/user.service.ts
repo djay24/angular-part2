@@ -22,6 +22,9 @@ export class UserService {
    login(user: any) {
     return this.api.post('/userLogin', user).subscribe((res: any) => {
       this.router.navigateByUrl('/')
-    })
+    });
+   };
+   getAllUsers() {
+    return this.api.get('/getAllUsers');
    };
 }
