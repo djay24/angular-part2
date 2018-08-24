@@ -32,6 +32,6 @@ export class UserService {
     return this.api.get('/getAllUsers');
    };
    getUser(_id) {
-    return this.api.get(`/user${_id}`);
+    return this.api.get(`/user/${_id}`);
    };
 }
