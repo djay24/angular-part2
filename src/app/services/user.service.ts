@@ -27,8 +27,11 @@ export class UserService {
    };
    logout() {
      return this.localStorage.remove('currentUser');
-   }
+   };
    getAllUsers() {
     return this.api.get('/getAllUsers');
+   };
+   getUser(_id) {
+    return this.api.get(`/user:${_id}`);
    };
 }

@@ -3,6 +3,7 @@ import { BreakpointObserver, Breakpoints, BreakpointState } from '@angular/cdk/l
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { LocalStorageService } from '../../services/local-storage.service'
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-nav',
@@ -17,8 +18,11 @@ export class NavComponent {
     );
     get user(): any {
       return this.localStorage.get('currentUser');
+    };
+    logout() {
+      this.userService.logout();
     }
     
-  constructor(private breakpointObserver: BreakpointObserver, private localStorage: LocalStorageService,) {}
+  constructor(private breakpointObserver: BreakpointObserver, private localStorage: LocalStorageService, private userService: UserService,) {}
   
   }
