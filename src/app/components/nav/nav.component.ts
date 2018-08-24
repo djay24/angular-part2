@@ -16,7 +16,7 @@ export class NavComponent {
       map(result => result.matches)
     );
     get user(): any {
-      return this.localStorage.get('currentUser')
+      return this.localStorage.get('currentUser');
     }
     
   constructor(private breakpointObserver: BreakpointObserver, private localStorage: LocalStorageService,) {}

@@ -11,6 +11,7 @@
       <a mat-list-item [routerLink]="['']">Home</a>
       <a mat-list-item [routerLink]="['register']" *ngIf="!user">Register</a>
       <a mat-list-item [routerLink]="['login']" *ngIf="!user">Login</a>
+      <a mat-list-item [routerLink]="[]" *ngIf="user">{{user.firstName}} {{user.lastName}}</a>
       <a mat-list-item [routerLink]="['users']">Users</a>
     </mat-nav-list>
   </mat-sidenav>
@@ -24,7 +25,7 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>DJ</span>
+      <span>Dj</span>
     </mat-toolbar>
     <!-- Add Content Here -->
     <router-outlet></router-outlet>

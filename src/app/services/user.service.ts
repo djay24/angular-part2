@@ -17,15 +17,13 @@ export class UserService {
     return this.api.post('/postUser', user).subscribe((res: any) => {
       this.localStorage.set('currentUser', res.user)
       console.log(res);
-      this.router.navigateByUrl('/')
-    });
+    }, err => console.log('There was an error'), () => this.router.navigateByUrl('/'));
    };
 
    login(user: any) {
     return this.api.post('/userLogin', user).subscribe((res: any) => {
       this.localStorage.set('currentUser', res.user)
-      this.router.navigateByUrl('/')
-    });
+    }, err => console.log(err), () => this.router.navigateByUrl('/'));
    };
    getAllUsers() {
     return this.api.get('/getAllUsers');
