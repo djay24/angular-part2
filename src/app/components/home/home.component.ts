@@ -12,8 +12,7 @@ export class HomeComponent implements OnInit {
 
 
 
-  ngOnInit() { 
-    this.localStorage.set('currentUser', {name: 'DJ', age: '21'});
-    console.log(this.localStorage.get('currentUser'))
+  ngOnInit() {
+    
   }
 }
