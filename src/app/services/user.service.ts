@@ -26,7 +26,8 @@ export class UserService {
     }, err => console.log(err), () => this.router.navigateByUrl('/'));
    };
    logout() {
-     return this.localStorage.remove('currentUser');
+     this.localStorage.remove('currentUser');
+     this.router.navigateByUrl('/login');
    };
    getAllUsers() {
     return this.api.get('/getAllUsers');
