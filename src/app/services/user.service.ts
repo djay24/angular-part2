@@ -6,7 +6,6 @@ import { ApiService } from './api.service'
 import { Router } from '@angular/router'
 import { LocalStorageService } from './local-storage.service'
 
-
 @Injectable({
   providedIn: 'root'
 })
@@ -19,7 +18,6 @@ export class UserService {
       console.log(res);
     }, err => console.log('There was an error'), () => this.router.navigateByUrl('/'));
    };
-
    login(user: any) {
     return this.api.post('/userLogin', user).subscribe((res: any) => {
       this.localStorage.set('currentUser', res.user)
