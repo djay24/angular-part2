@@ -1,15 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroupDirective, NgForm, Validators } from '@angular/forms'
-import { ErrorStateMatcher } from '@angular/material'
+import { FormControl, Validators } from '@angular/forms'
 
 import { UserService } from '../../services/user.service'
-
-export class MyErrorStateMatcher implements ErrorStateMatcher {
-  isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean { 
-  const isSubmitted = form && form.submitted;
-  return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
-}
-  }
+import { ErrorStateManager } from '../../classes/error-state-manager'
 
 @Component({
   selector: 'app-login',
@@ -25,7 +18,7 @@ export class LoginComponent implements OnInit {
     ]),
     password: ''
   };
-  matcher = new MyErrorStateMatcher();
+  matcher = new ErrorStateManager();
 
   constructor(private userService: UserService) { }
 
