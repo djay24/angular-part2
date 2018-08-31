@@ -24,7 +24,7 @@ export class UsersComponent implements OnInit {
 
   ngOnInit() {
     // this.getAllUsers();
-    this.tokenService.checkToken();
+    this.tokenService.checkToken('/login');
 
   }
   

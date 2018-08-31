@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { LocalStorageService } from './local-storage.service';
 import { SessionStorageService } from './session-storage.service';
+import { Router } from '@angular/router'
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +22,7 @@ export class TokenService {
   '6', '7', '8', '9', '0', '@',
   '$', '!', '#', '%', '&']
  
-  constructor(private localStorage: LocalStorageService, private sessionStorage: SessionStorageService) { }
+  constructor(private localStorage: LocalStorageService, private sessionStorage: SessionStorageService, private router: Router) { }
 
   generateToken (both) {
     let rndString = '';
@@ -33,23 +34,18 @@ export class TokenService {
   }
   setToken(token, both) {
     if (both) {
-      console.log('here')
       this.sessionStorage.set('token', token);
       this.localStorage.set('token', token);
     } else {
-      console.log('there')
-      this.sessionStorage.set('token', token);
+      this.sessionStorage.set('token', token)
     }
    }
-  checkToken() {
+  checkToken(redirect) {
     const localToken = this.localStorage.get('token');
     const sessionToken = this.sessionStorage.get('token');
-    if (localToken === sessionToken) {
-      console.log(`local storage token: ${localToken}`);
-      console.log(`session storage token: ${sessionToken}`);
-      alert('Tokens match');
-    } else {
-      alert('tokens do not match');
+    if (localToken !== sessionToken) {
+    alert('you do not have the same token');
+    this.router.navigateByUrl(redirect);
     }
   }
 }
