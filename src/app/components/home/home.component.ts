@@ -9,11 +9,11 @@ import { TokenService } from '../../services/token.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private localStorage: LocalStorageService, private token: TokenService) { }
-
-
+  constructor(private token: TokenService) { }
+  genToken(val) {
+    this.token.generateToken(val);
+  }
 
   ngOnInit() {
-   this.token.generateToken(); 
   }
 }
