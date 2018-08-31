@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { HttpClientModule } from '@angular/common/http'
 
 import { AppComponent } from './app.component';
@@ -32,6 +32,7 @@ import { ProductsComponent } from './components/products/products.component';
     BrowserAnimationsModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     LayoutModule,
     MatToolbarModule,
     MatButtonModule,
@@ -40,7 +41,7 @@ import { ProductsComponent } from './components/products/products.component';
     MatListModule,
     MatInputModule,
     HttpClientModule,
-    MatTableModule
+    MatTableModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
