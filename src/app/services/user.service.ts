@@ -3,15 +3,19 @@ import { registerContentQuery } from '@angular/core/src/render3/instructions';
 
 import { User } from '../classes/user'
 import { ApiService } from './api.service'
-import { Router } from '@angular/router'
+import { Router, ActivatedRoute } from '@angular/router'
 import { LocalStorageService } from './local-storage.service'
+import { IUser } from '../interfaces/i-user';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  constructor(private api: ApiService, private router: Router, private localStorage: LocalStorageService) {}
+  profileUrl: string;
+  currentProfile: IUser;
+
+  constructor(private api: ApiService, private router: Router, private localStorage: LocalStorageService, private route: ActivatedRoute, private iUser: IUser) {}
    register(user: User) {
     return this.api.post('/postUser', user).subscribe((res: any) => {
       this.localStorage.set('currentUser', res.user)
@@ -33,4 +37,7 @@ export class UserService {
    getUser(_id) {
     return this.api.get(`/user/${_id}`);
    };
+   getProfileUrl() {
+     console.log(this.route.snapshot.url);
+   }
 }

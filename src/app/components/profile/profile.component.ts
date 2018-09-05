@@ -24,11 +24,14 @@ export class ProfileComponent implements OnInit {
   }
 
   getUser(id) {
-    this.userService.getUser(id).subscribe( (user: any) => this.user = user);
+    this.userService.getUser(id).subscribe( (user: any) => {
+    this.user = user;
+    this.userService.currentProfile = user;
+  });
   }
   getUrl() {
-    this.url = this.router.url;
-    console.log(this.router);
+    // this.url = this.router.url;
+    console.log(this.route.children);
   }
 
   ngOnInit() {
