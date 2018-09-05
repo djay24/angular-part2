@@ -18,6 +18,7 @@ import { ProductsComponent } from './components/products/products.component';
 import { ProfileHomeComponent } from './components/profile/profile-home/profile-home.component';
 import { ProfileAboutComponent } from './components/profile/profile-about/profile-about.component';
 import { ProfileContactComponent } from './components/profile/profile-contact/profile-contact.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { ProfileContactComponent } from './components/profile/profile-contact/pr
     ProductsComponent,
     ProfileHomeComponent,
     ProfileAboutComponent,
-    ProfileContactComponent
+    ProfileContactComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

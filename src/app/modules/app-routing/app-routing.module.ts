@@ -10,6 +10,7 @@ import { ProfileHomeComponent } from '../../components/profile/profile-home/prof
 import { ProfileAboutComponent } from '../../components/profile/profile-about/profile-about.component';
 import { ProfileContactComponent } from '../../components/profile/profile-contact/profile-contact.component';
 import { ProductsComponent } from '../../components/products/products.component';
+import { NotFoundComponent } from '../../components/not-found/not-found.component'
 
 
 
@@ -20,6 +21,7 @@ const routes: Routes = [
   {path: 'register', component: RegisterComponent },
   {path: 'users', component: UsersComponent}, 
   {path: 'user/:id', component: ProfileComponent, children: [
+    {path: '', redirectTo: 'home', pathMatch: 'full'},
     {path: 'home', component: ProfileHomeComponent},
     {path: 'about', component: ProfileAboutComponent},
     {path: 'contact', component: ProfileContactComponent}
