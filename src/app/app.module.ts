@@ -8,14 +8,14 @@ import { HomeComponent } from './components/home/home.component';
 import { AppRoutingModule } from './modules/app-routing/app-routing.module';
 import { NavComponent } from './components/nav/nav.component';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatInputModule, MatTableModule } from '@angular/material';
+import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatInputModule, MatTableModule, MatTabsModule } from '@angular/material';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { UsersComponent } from './components/users/users.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ProductsComponent } from './components/products/products.component';
-import { ProfileHomeComponent } from './component/profile/profile-home/profile-home.component';
+import { ProfileHomeComponent } from './components/profile/profile-home/profile-home.component';
 import { ProfileAboutComponent } from './components/profile/profile-about/profile-about.component';
 import { ProfileContactComponent } from './components/profile/profile-contact/profile-contact.component';
 
@@ -48,6 +48,7 @@ import { ProfileContactComponent } from './components/profile/profile-contact/pr
     MatInputModule,
     HttpClientModule,
     MatTableModule,
+    MatTabsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
