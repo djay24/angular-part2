@@ -6,7 +6,12 @@ import { LoginComponent } from '../../components/login/login.component';
 import { RegisterComponent } from '../../components/register/register.component';
 import { UsersComponent } from '../../components/users/users.component';
 import { ProfileComponent } from '../../components/profile/profile.component';
+import { ProfileHomeComponent } from '../../components/profile/profile-home/profile-home.component';
+import { ProfileAboutComponent } from '../../components/profile/profile-about/profile-about.component';
+import { ProfileContactComponent } from '../../components/profile/profile-contact/profile-contact.component';
 import { ProductsComponent } from '../../components/products/products.component';
+
+
 
 
 const routes: Routes = [
@@ -14,7 +19,11 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent },
   {path: 'register', component: RegisterComponent },
   {path: 'users', component: UsersComponent}, 
-  {path: 'user/:id', component: ProfileComponent},
+  {path: 'user/:id', component: ProfileComponent, children: [
+    {path: 'home', component: ProfileHomeComponent},
+    {path: 'about', component: ProfileAboutComponent},
+    {path: 'contact', component: ProfileContactComponent}
+  ]},
   {path: 'products', component: ProductsComponent}, 
 ];
 
