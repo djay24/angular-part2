@@ -20,7 +20,7 @@ export class UserService {
    };
    login(user: any) {
     return this.api.post('/userLogin', user).subscribe((res: any) => {
-      this.localStorage.set('currentUser', res.user)
+      this.localStorage.set('currentUser', res.user);
     }, err => console.log(err), () => this.router.navigateByUrl('/'));
    };
    logout() {

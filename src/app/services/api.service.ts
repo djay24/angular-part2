@@ -7,7 +7,6 @@ import { HttpClient } from '@angular/common/http'
 })
 export class ApiService {
   private apiUrl = 'https://jordomav.ngrok.io';
-  // private apiUrl = 'https://1952ffa4.ngrok.io'; ryeker's 
 
   constructor(private http: HttpClient) { }
   get(url) {

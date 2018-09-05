@@ -26,6 +26,7 @@ const routes: Routes = [
     {path: 'about', component: ProfileAboutComponent},
     {path: 'contact', component: ProfileContactComponent}
   ]},
+  {path: '**', component: NotFoundComponent},
   {path: 'products', component: ProductsComponent}, 
 ];
 
