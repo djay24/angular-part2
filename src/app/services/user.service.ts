@@ -14,8 +14,7 @@ export class UserService {
 
   profileUrl: string;
   currentProfile: IUser;
-
-  constructor(private api: ApiService, private router: Router, private localStorage: LocalStorageService, private route: ActivatedRoute, private iUser: IUser) {}
+   constructor(private api: ApiService, private router: Router, private localStorage: LocalStorageService, private route: ActivatedRoute) { }
    register(user: User) {
     return this.api.post('/postUser', user).subscribe((res: any) => {
       this.localStorage.set('currentUser', res.user)
@@ -38,6 +37,6 @@ export class UserService {
     return this.api.get(`/user/${_id}`);
    };
    getProfileUrl() {
-     console.log(this.route.snapshot.url);
-   }
+    console.log(this.route.snapshot.url);
+  }
 }

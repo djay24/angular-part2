@@ -20,16 +20,14 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent },
   {path: 'register', component: RegisterComponent },
   {path: 'users', component: UsersComponent}, 
-  {path: 'user/:id', component: ProfileComponent, children: [
-    {path: '', redirectTo: 'home', pathMatch: 'full'},
-    {path: 'home', component: ProfileHomeComponent},
-    {path: 'about', component: ProfileAboutComponent},
-    {path: 'contact', component: ProfileContactComponent}
-  ]},
-  {path: '**', component: NotFoundComponent},
-  {path: 'products', component: ProductsComponent}, 
+  { path: 'user/:id', component: ProfileComponent, children: [
+    { path: '', redirectTo: 'home', pathMatch: 'full' },
+    { path: 'home', component: ProfileHomeComponent },
+    { path: 'about', component: ProfileAboutComponent },
+    { path: 'contact', component: ProfileContactComponent }
+  ] },
+{ path: '**', component: NotFoundComponent }
 ];
-
 @NgModule({
   imports: [ RouterModule.forRoot(routes) ],
   exports: [ RouterModule ]

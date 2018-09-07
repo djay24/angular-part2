@@ -14,7 +14,6 @@ export class ProfileComponent implements OnInit {
   
   user: IUser;
   url: string = '';
-
   constructor(private route: ActivatedRoute, private userService: UserService, private router: Router) { }
 
   getId() {
@@ -25,12 +24,12 @@ export class ProfileComponent implements OnInit {
 
   getUser(id) {
     this.userService.getUser(id).subscribe( (user: any) => {
-    this.user = user;
-    this.userService.currentProfile = user;
+      this.user = user;
+      this.userService.currentProfile = user;
   });
   }
   getUrl() {
-    // this.url = this.router.url;
+    this.url = this.router.url;
     console.log(this.route.children);
   }
 
